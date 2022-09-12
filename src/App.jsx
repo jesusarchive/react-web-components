@@ -1,28 +1,23 @@
 import React from "react";
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
-import "./App.css";
 import HomePage from "./pages/home-page";
 import AboutPage from "./pages/about-page";
+import "./index.css";
 
 function App() {
   return (
     <BrowserRouter>
-      <div>
-        <h1>MY APP</h1>
-        <nav
-          style={{
-            borderBottom: "solid 1px",
-            paddingBottom: "1rem",
-          }}
-        >
+      <div className="h-30 w-full p-5">
+        <h1 className="text-3xl font-bold pb-10">MY APP</h1>
+        <nav className="border-b-2 pb-2 text-xl uppercase">
           <Link to="/">Home</Link> | <Link to="/about">About</Link>
         </nav>
-      </div>
 
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/about" element={<AboutPage />} />
-      </Routes>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+        </Routes>
+      </div>
     </BrowserRouter>
   );
 }
